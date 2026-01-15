@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box; /*Determino como se calcula el tamaño total del elemento*/
+    /*Espicifique que el tamaño total del elemento se calcula 
+    de una manera que incluye tanto el contenido como el relleno y el borde.*/
+    scroll-behavior: smooth;/*suaviza el scroll*/
+    text-decoration: none;
+}
+
+:root{
+    --clrPrincipal: rgb(4, 4, 4);
+    --clrTexto: #000;
+    --clrFondo: #fff;
+    --fuenteGrande: 4rem;
+    --fuente-h2: 1.5rem;
+    --fuente-h3: 1rem;
+    --fuente-p: 0.8rem;
+    --clrBoton: #4592fd;
+}
+
+*::selection{
+    color: var(--clrTexto);
+}
+
+/*ELEMENTOS DEL HEADER*/
+header{
+    position: fixed;/*fijo la barra de menu en el lugar*/
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;/*Hago que los elem. del contenedor se acomoden de una forma mas flexible*/
+    justify-content: space-between; /*Los elementos se acomodan automaticamente el espacio*/
+    align-items: center;
+    padding: 10px 50px 0;
+
+    background-color: #be992b;
+}
+
+/*LOGO DEL HEADER*/
+.logo{
+    color: var(--clrPrincipal);
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+
+
+/*BARRA DE NAVEGACION DEL HEADER*/
+header nav{
+    display: flex;
+    gap: 10px; /*determino el espapcio entre los elementos, sin necesidad de utilaz margenes*/
+}
+
+header nav a{
+    position: relative;
+    padding: 12px 20px;
+
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 700; 
+    color: #fff;
+    
+}
+
+header nav a:hover{
+    color: #333;
+    transition: 0.5s ease-in-out;
+}
+
+
+header nav a.active{
+    color: #333;
+    transition: 0.5s ease-in-out;
+}
+.LOGOTIPO{
+width: 10px;
+height:90px;
+
+}
+
+/*modifico los contenedores sections*/
+section{
+    padding: 5% 15%;
+}
+
+/*SECCION INICIO*/
+.inicio{
+    
+     
+    width: 100%;
+    min-height: 90vh; /*establezco la altura minima del contenedor*/
+
+    background-image: url("Imagenes/Fondo Inicio/autodefondo.png");
+    background-size: cover;/*La imagen de fondo se ajusta auatomaticamente al espacio del contenedor*/
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 1fr crea una columna flexible para ocupar el espacio restante */
+    gap: center;
+    align-items: center;
+     
+}
+
+.txt-inicio{
+    grid-column: 1;/* Coloca el elemento en la primera columna (izquierda) */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: baseline;
+}
+
+.txt-inicio h1{
+    font-size: var(--fuenteGrande);
+    color: var(--clrTexto);
+}
+
+.txt-inicio p{
+    margin: 0.8rem;
+
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+}
+
+.boton{
+    display: inline-block;/*convierto al elemento con su contenido en un bloque*/
+    padding: 10px 20px;
+    background-color: #fff;
+    color:#000;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+.boton:hover{
+    background-color: aquamarine;
+    transition: 0.5s ease-in-out;
+}
+
+
+/*SECCION DE LOS MODELOS DE LOS AUTOS
+.modelos{
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    *
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}*/
+
+.modelos{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #fbffff;
+}
+
+.titulo{
+    text-align: center;
+}
+.titulo span{
+    color: var(--clrTexto);
+    font-weight: bold;
+}
+.titulo h2{
+    font-size: var(--fuente-h2);
+    margin-bottom: 2rem;
+}
+
+.contenido-modelos{ 
+    display: flex;
+
+    width: 70rem;
+    height: 30rem;
+
+    background-color: #000;
+
+    z-index: 1;
+}
+
+.contenido-modelos img{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+.contenido-modelos img:hover{
+    cursor: crosshair;
+    width: 20rem;
+    height: auto;
+    opacity: 50;
+    filter: contrast(120%);
+}
+
+
+
+/*SOBRE NOSOTROS*/
+.sobreNosotros{ /*modicfico el contenedor section*/
+
+    width: 100%;
+    height: 60rem;
+
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+    gap: 2.5rem;
+    align-items: center;
+
+    background: #e2ebea;
+}
+
+.sobreN-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*background: #333;*/
+}
+
+.sobreN-titulo h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.sobreN-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2.5rem;
+    align-items: center;
+
+    /*background: #4592fd;*/
+}
+
+/*dentro del contenedor section modifico el div que contiene a la imagen*/
+.sobreN-img img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.sobreN-txt h3{/*Modifico el titulo*/
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sobreN-txt p{
+    margin: 0.5rem 0 1rem;
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+
+
+/*Seccion de la ubicacion del local*/
+.ubicacion{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #c9d8d5;
+
+}
+
+.ubicacion .ubicacion-titulo{
+    margin-bottom: 1rem;
+}
+
+.ubicacion-titulo h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+
+.ubicacion .ubicacion-c{
+
+    width: 90%;
+    height: auto;
+
+    padding: 5% 2%;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2.5rem;
+    align-items: center;
+
+    border-radius: 1.5rem;
+
+    background: #e9dfd2;
+}
+
+
+
+/*Seccion de contacto*/
+.contacto{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #b0c4bf;
+}
+
+.contactos{
+    width: 90%;
+    height: auto;
+
+    padding: 5% 2%;
+
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    gap: 2rem;
+    align-items: center;
+
+    border-radius: 1.5rem;
+
+    background: #e9dfd2;
+}
+.formulario{
+
+    width: 100%;
+
+    padding: 5% 0;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario form{
+    width: 90%;
+    height: auto;
+
+    background: transparent;
+
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 2px;
+
+    padding: 10% 5%;
+}
+
+.formulario h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    
+}
+
+.formulario .input-box{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+
+    /*background: #b0c4bf;*/
+}
+
+.input-box input{
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 10px;
+    
+    background: #ffffff6e;
+
+    border: none;
+    outline: none;
+
+    border: 2px solid rgba(255, 255, 255, 0.701);
+    border-radius: 40px;
+
+    padding: 5% 10%;
+}
+
+.input-box .comentario{
+    height: 120px;
+}
+
+.input-box input::placeholder{
+    color: #000;
+}
+
+form .btn-submit{
+    width: 100%;
+    height: auto;
+
+    padding: 2%;
+
+    background: #fff;
+
+    border: none;
+    border-radius: 40px;
+
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
+
+.redesSociales{
+    width: 100%;
+    height: auto;
+
+    font-display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*background: aquamarine;*/
+}
+
+.redesS-titulo{
+    margin-bottom: 20px;
+    /*background: #4592fd;*/
+}
+
+.redesS-titulo h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+    text-align: left;
+
+    margin-bottom: 15px;
+}
+
+.redesS-titulo h5{
+    font-size: 1rem;
+    font-weight: 700;
+    
+    text-align: left;
+
+    margin-bottom: 10px;
+}
+
+.redesS-iconos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2% 5%;
+    /*background: #b0c4bf;*/
+}
+
+.redesS-iconos .rS{
+    width: 60%;
+    height: 50px;
+
+    padding: 2% 5%;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    margin: 20px;
+
+    border: none;
+    outline: none;
+
+    border: 2px solid rgba(255, 255, 255, 0.701);
+    border-radius: 40px;
+}
+
+
+.Facebook:hover{
+    background: #3b5998;
+    transition: 0.90s ease-in-out;
+}
+.Instagram:hover{
+    background: #E1306C;
+    transition: 0.90s ease-in-out;
+}
+.Twitter:hover{
+    background: #1DA1F2;
+    transition: 0.90s ease-in-out;
+}
+.YouTube:hover{
+    background: #d71e18;
+    transition: 0.90s ease-in-out;
+}
+
+
+.rS article{
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+}
+
+
+.rS article i{
+    transform: scale(2.5);
+    position: relative;
+    top: -2px
+}
+
+.rS article span{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+
+
